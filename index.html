@@ -1,90 +1,160 @@
-<!-- PROJECTS -->
-<section id="projects" class="projects">
-    <h2>Selected Works</h2>
-    <h3>Photoshop</h3>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Akshaya Santhosh | Creative Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-    <div class="slider">
+    <!-- HERO -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Akshaya Santhosh</h1>
+            <p>Visual Designer • Motion Artist • Creative Thinker</p>
+            <a href="#projects" class="btn">View My Work</a>
+        </div>
+    </header>
 
-        <button class="arrow left">&#10094;</button>
+    <!-- ABOUT -->
+    <section class="about">
+        <h2>About Me</h2>
+        <p>
+            I create visually compelling designs that combine creativity and strategy.
+            My work focuses on branding, motion design, and digital storytelling.
+        </p>
+    </section>
 
-        <div class="project-grid">
+    <!-- PROJECTS -->
+    <section id="projects" class="projects">
+        <h2>Selected Works</h2>
+        <h3>Photoshop</h3>
 
-            <!-- PROJECT 1 -->
-            <div class="project active">
-                <div class="project-image">
-                    <div class="video-box">Preview Here</div>
-                </div>
+        <div class="slider">
 
-                <div class="project-content">
+            <button class="arrow left">&#10094;</button>
+
+            <div class="project-grid">
+
+                <!-- PROJECT 1 -->
+                <div class="project active">
                     <h4>Brand Identity System</h4>
-                    <p>Complete branding and logo design for a modern business.</p>
 
+                    <!-- STYLE TAGS -->
                     <div class="project-tags">
-                        <span>Brand Strategy</span>
-                        <span>Logo Design</span>
-                        <span>Brand Identity</span>
-                        <span>Photoshop</span>
+                        <span class="tag">Brand Identity</span>
+                        <span class="tag">Logo Design</span>
+                        <span class="tag">Minimal Style</span>
                     </div>
-                </div>
-            </div>
 
-            <!-- PROJECT 2 -->
-            <div class="project">
-                <div class="project-image">
+                    <p>
+                        Complete branding and logo design for a modern business.
+                    </p>
+
                     <div class="video-box">Preview Here</div>
                 </div>
 
-                <div class="project-content">
+                <!-- PROJECT 2 -->
+                <div class="project">
                     <h4>Kinetic Typography</h4>
-                    <p>Dynamic motion graphics created for a promotional campaign.</p>
 
                     <div class="project-tags">
-                        <span>Motion Graphics</span>
-                        <span>Typography</span>
-                        <span>After Effects</span>
+                        <span class="tag">Motion Graphics</span>
+                        <span class="tag">Typography</span>
+                        <span class="tag">Dynamic Style</span>
                     </div>
-                </div>
-            </div>
 
-            <!-- PROJECT 3 -->
-            <div class="project">
-                <div class="project-image">
+                    <p>
+                        Animated typography campaign with energetic transitions.
+                    </p>
+
                     <div class="video-box">Preview Here</div>
                 </div>
 
-                <div class="project-content">
+                <!-- PROJECT 3 -->
+                <div class="project">
                     <h4>Product Explainer</h4>
-                    <p>Corporate animation showcasing product features and benefits.</p>
 
                     <div class="project-tags">
-                        <span>2D Animation</span>
-                        <span>Explainer Video</span>
-                        <span>Video Editing</span>
+                        <span class="tag">Corporate Animation</span>
+                        <span class="tag">2D Motion</span>
+                        <span class="tag">Clean Style</span>
                     </div>
-                </div>
-            </div>
 
-            <!-- PROJECT 4 -->
-            <div class="project">
-                <div class="project-image">
+                    <p>
+                        Professional explainer video designed for marketing.
+                    </p>
+
                     <div class="video-box">Preview Here</div>
                 </div>
 
-                <div class="project-content">
+                <!-- PROJECT 4 -->
+                <div class="project">
                     <h4>Illustration Series</h4>
-                    <p>Creative digital artwork developed for personal exploration.</p>
 
                     <div class="project-tags">
-                        <span>Digital Art</span>
-                        <span>Illustration</span>
-                        <span>Photoshop</span>
+                        <span class="tag">Digital Art</span>
+                        <span class="tag">Illustration</span>
+                        <span class="tag">Artistic Style</span>
                     </div>
+
+                    <p>
+                        Creative illustration series showcasing visual storytelling.
+                    </p>
+
+                    <div class="video-box">Preview Here</div>
                 </div>
+
             </div>
+
+            <button class="arrow right">&#10095;</button>
 
         </div>
+    </section>
 
-        <button class="arrow right">&#10095;</button>
+    <!-- CONTACT -->
+    <section class="contact">
+        <h2>Let's Work Together</h2>
+        <p>Email: akshayasanthosh2000@gmail.com</p>
+        <p>Instagram: @yourhandle</p>
+    </section>
 
-    </div>
-</section>
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Akshaya | All Rights Reserved</p>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        const track = document.querySelector('.project-grid');
+        const slides = document.querySelectorAll('.project');
+        const next = document.querySelector('.right');
+        const prev = document.querySelector('.left');
+
+        let index = 0;
+
+        function updateSlider() {
+            track.style.transform = `translateX(-${index * 100}%)`;
+
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[index].classList.add('active');
+        }
+
+        next.onclick = () => {
+            if (index < slides.length - 1) {
+                index++;
+                updateSlider();
+            }
+        };
+
+        prev.onclick = () => {
+            if (index > 0) {
+                index--;
+                updateSlider();
+            }
+        };
+    </script>
+
+</body>
+</html>
